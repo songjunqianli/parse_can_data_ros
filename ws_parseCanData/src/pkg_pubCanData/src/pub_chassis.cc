@@ -15,8 +15,8 @@ int main (int argc, char **argv) {
     ros::init(argc, argv, "pub_chassis");
     ros::NodeHandle nh;
     ros::Publisher pub_wheelSpeed = nh.advertise<pkg_pubCanData::wheelSpeed>("wheelSpeed", 3);
-    ros::Publisher pub_vehicleSpeed = nh.advertise<pkg_pubCanData::wheelSpeed>("vehicleSpeed", 3);
-    ros::Publisher pub_yawRate = nh.advertise<pkg_pubCanData::wheelSpeed>("yawRate", 3);
+    ros::Publisher pub_vehicleSpeed = nh.advertise<pkg_pubCanData::vehicleSpeed>("vehicleSpeed", 3);
+    ros::Publisher pub_yawRate = nh.advertise<pkg_pubCanData::yawRate>("yawRate", 3);
 
     // string can_name = "can0";
     // string dbc_path = "/home/songj/work/数据采集/data_collection_v2/ws_canData/src/pkg_pubChassisData/dbc/MPC_20220902.dbc";

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<launch>
+    <!--
+    <node>标签中有三项必不可少，
+        pkg项指定节点所在的包名，
+        type项指定可执行程序名字，其与CMakeLists.txt中add_executable()项对应，
+        name项对应节点启动之后的名字，可使用rosnode list查看。
+        respawn是可选，表示节点退出后，是否重新启动，默认为false。
+        output是可选，表示log输出位置，如果是screen表示log输出到屏幕，如果是log表示输出到log文件，默认为log。
+    
+    <param>标签用于创建节点参数，其创建的参数位于节点命名空间，
+        name表示key值，与程序保持一致，注意这里与使用rosrun不同，rosrun中的参数key值是有下划线的，
+        value表示值，
+        type表示参数类型。参数类型可为int，double，bool，string以及yaml。
+    -->
+  <param name="can_name" value="can0" type="string" />
+  <param name="dbc_path" value="../dbc/MPC_20220902.dbc" type="string" />
+  <node pkg="pkg_pubCanData" type="pub_chassis" respawn="false" name="pub_chassis" output="screen">
+  </node>
+</launch>
